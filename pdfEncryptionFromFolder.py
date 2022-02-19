@@ -176,15 +176,15 @@ class pdfEncryptor:
             logging.critical("Error occured while sending the encrypted file to the end user") #logging th error
             logging.critical(e)
 def main():
-
-    logging.basicConfig(filename='pdfEncryptionFromFolder.log',
+    
+    try:
+        logging.basicConfig(filename='pdfEncryptionFromFolder.log',
                         encoding='utf-8',
                         filemode='a',
                         format='%(asctime)s:%(levelname)s:%(message)s',
                         datefmt="%Y-%m-%d:%H-%M-%S",
                         level=logging.DEBUG
                         )
-    try:
         root = tkinter.Tk()
         root.withdraw()
         tkinter.messagebox.showinfo("PDF Encryptor", "Please select a directory") #giving instruction to the user to choose directory
